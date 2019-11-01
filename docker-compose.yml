@@ -1,0 +1,31 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4040:4040"
+    container_name: app_container
+    restart: unless-stopped
+    networks:
+      - backend
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    container_name: db_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: webapp
+      MYSQL_PASSWORD: admin
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./migration/mysql/scripts.sql:/docker-entrypoint-initdb.d/scripts.sql
+    networks:
+      - backend
+volumes:
+  db-data:
+networks:
+  backend:
