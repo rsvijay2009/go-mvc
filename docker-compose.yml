@@ -15,7 +15,7 @@ services:
     ports:
       - "3306:3306"
     container_name: db_container
-    restart: always
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: webapp
