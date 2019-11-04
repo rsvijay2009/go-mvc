@@ -14,6 +14,7 @@
         {{.test}}
             {{if .UserID}}
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/profile">Profile</a></li>
                     <li><a href="/notepad">Notepad</a></li>
                     <li><a href="/logout">Logout</a></li>
                 </ul>
