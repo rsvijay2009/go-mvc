@@ -29,6 +29,6 @@ func FindUser(email string) User {
 func FindUserByID(uid int) User {
 	db := orm.NewOrm()
 	var user User
-	db.QueryTable(new(User)).Filter("uid", uid).One(&user)
+	db.QueryTable(new(User)).Filter("id", uid).One(&user)
 	return user
 }

@@ -38,6 +38,7 @@ func (c *NotePadController) CreateNote() {
 			c.LayoutSections["Nav"] = "navbar.tpl"
 			c.LayoutSections["Footer"] = "footer.tpl"
 			c.Data["Title"] = "Create Note"
+			c.Data["UserID"] = UserID
 			c.Data["UserName"] = UserName
 			c.TplName = "notepad.tpl"
 			return
@@ -52,6 +53,7 @@ func (c *NotePadController) CreateNote() {
 			c.LayoutSections["Nav"] = "navbar.tpl"
 			c.LayoutSections["Footer"] = "footer.tpl"
 			c.TplName = "notepad.tpl"
+			c.Data["UserID"] = UserID
 			c.Data["UserName"] = UserName
 			c.Redirect(beego.URLFor("NotePadController.CreateNote"), 302)
 		} else {
@@ -60,6 +62,7 @@ func (c *NotePadController) CreateNote() {
 			c.LayoutSections = make(map[string]string)
 			c.LayoutSections["Nav"] = "navbar.tpl"
 			c.LayoutSections["Footer"] = "footer.tpl"
+			c.Data["UserID"] = UserID
 			c.Data["UserName"] = UserName
 			c.Data["Title"] = "Create Note"
 			c.TplName = "notepad.tpl"
@@ -77,6 +80,7 @@ func (c *NotePadController) CreateNote() {
 		c.LayoutSections["Nav"] = "navbar.tpl"
 		c.LayoutSections["Footer"] = "footer.tpl"
 		c.Data["Title"] = "Your Notes"
+		c.Data["UserID"] = UserID
 		c.Data["UserName"] = UserName
 
 		c.TplName = "notepad.tpl"
@@ -100,6 +104,7 @@ func (c *NotePadController) GetNotes() {
 		}
 		note := models.GetNotesByID(m.Id)
 		c.Data["Note"] = note
+		c.Data["UserID"] = UserID
 		c.Data["UserName"] = UserName
 		c.Layout = "layout.tpl"
 		c.LayoutSections = make(map[string]string)

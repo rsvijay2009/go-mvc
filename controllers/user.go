@@ -17,6 +17,11 @@ type UserController struct {
 
 // Login to handle user login
 func (c *UserController) Login() {
+	UserID := c.GetSession("uId")
+	if UserID != nil {
+		c.Redirect(beego.URLFor("HomeController.Home"), 302)
+	}
+
 	if c.Ctx.Input.IsPost() {
 		form := models.LoginForm{}
 		c.ParseForm(&form)
@@ -25,7 +30,7 @@ func (c *UserController) Login() {
 		if utils.CheckPasswordHash(form.Password, user.Password) {
 			c.SetSession("username", user.FirstName)
 			c.SetSession("uId", user.Id)
-			c.Redirect("/member", 302)
+			c.Redirect("/profile", 302)
 		} else {
 			c.Data["ErrorMsg"] = "Invalid credentials. Please try again"
 			c.Layout = "layout.tpl"
@@ -37,6 +42,7 @@ func (c *UserController) Login() {
 			c.Render()
 		}
 	}
+
 	c.Data["xsrf"] = template.HTML(c.XSRFFormHTML())
 	c.Data["Title"] = "Login"
 	c.Layout = "layout.tpl"
@@ -50,6 +56,10 @@ func (c *UserController) Login() {
 
 // Register to handle user registration
 func (c *UserController) Register() {
+	UserID := c.GetSession("uId")
+	if UserID != nil {
+		c.Redirect(beego.URLFor("HomeController.Home"), 302)
+	}
 	if c.Ctx.Input.IsPost() {
 		form := models.User{}
 		c.ParseForm(&form)
