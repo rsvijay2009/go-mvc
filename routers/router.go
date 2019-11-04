@@ -13,7 +13,7 @@ func init() {
 	beego.Router("/logout/", &controllers.UserController{}, "get:Logout")
 
 	// Member related routes
-	beego.Router("/member/", &controllers.HomeController{}, "get:Home")
+	beego.Router("/profile/", &controllers.HomeController{}, "get:Home")
 
 	// User notes related routes
 	beego.Router("/notepad/", &controllers.NotePadController{}, "get,post:CreateNote")
