@@ -21,7 +21,9 @@ Follow the steps to run the application
   ```
   git clone https://github.com/rsvijay2009/go-mvc.git
   ```
-  
+
+- Edit the environment variables in `.env` file
+
 - Run the below commands to create and run the application inside a Docker container
 
   ```
