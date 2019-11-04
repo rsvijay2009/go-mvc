@@ -15,19 +15,19 @@
                                     <tbody>
                                     <tr>
                                         <td>First Name</td>
-                                        <td>{{User.FirstName}}</td>
+                                        <td>{{.User.FirstName}}</td>
                                     </tr>
                                     <tr>
                                         <td>Last Name</td>
-                                        <td>{{User.LastName}}</td>
+                                        <td>{{.User.LastName}}</td>
                                     </tr>
                                     <tr>
                                         <td>Email</td>
-                                        <td>{{User.Email}}</td>
+                                        <td>{{.User.Email}}</td>
                                     </tr>
                                     <tr>
                                         <td>Phone</td>
-                                        <td>{{User.Phone}}</td>
+                                        <td>{{.User.Phone}}</td>
                                     </tr>
                                     </tbody>
                                 </table>
