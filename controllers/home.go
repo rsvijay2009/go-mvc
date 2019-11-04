@@ -13,6 +13,7 @@ type HomeController struct {
 // Home used to get the login view
 func (c *HomeController) Home() {
 	loggedUserID := c.GetSession("uId")
+	loggedUserName := c.GetSession("username")
 
 	if loggedUserID != nil {
 		user := models.FindUserByID(loggedUserID.(int))
@@ -21,6 +22,7 @@ func (c *HomeController) Home() {
 		c.LayoutSections["Nav"] = "navbar.tpl"
 		c.LayoutSections["Footer"] = "footer.tpl"
 		c.Data["User"] = user
+		c.Data["UserName"] = loggedUserName
 		c.Data["UserID"] = user.Id
 		c.Data["Title"] = "Welcome"
 		c.TplName = "home.tpl"

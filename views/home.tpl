@@ -8,14 +8,14 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                                <img class="img-circle" src="static/img/no-img.png" width="100" height="100" alt="User Pic">
+                                <img class="img-circle" src="/static/img/no-img.png" width="100" height="100" alt="User Pic">
                             </div>
                             <div class=" col-md-12">
                                 <table class="table">
                                     <tbody>
                                     <tr>
-                                        <td>First Name</td>
-                                        <td>{{.User.FirstName}}</td>
+                                        <td class="table-no-border">First Name</td>
+                                        <td class="table-no-border">{{.User.FirstName}}</td>
                                     </tr>
                                     <tr>
                                         <td>Last Name</td>

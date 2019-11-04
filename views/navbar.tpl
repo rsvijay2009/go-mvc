@@ -12,7 +12,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         {{.test}}
-            {{if .UserName}}
+            {{if .UserID}}
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/notepad">Notepad</a></li>
                     <li><a href="/logout">Logout</a></li>
