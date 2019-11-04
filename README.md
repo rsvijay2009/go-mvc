@@ -25,6 +25,7 @@ Follow the steps to run the application
 - Run the below command to build the go binary for the docker container
 
     ```
+    cd go-mvc
     go build webapp
     ```
 
