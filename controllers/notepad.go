@@ -91,42 +91,49 @@ func (c *NotePadController) CreateNote() {
 
 // GetNotes used to get a note based on note id
 func (c *NotePadController) GetNotes() {
+	UserID := c.GetSession("uId")
+	UserName := c.GetSession("username")
+
 	id := c.Ctx.Input.Param(":id")
 	mode := c.Ctx.Input.Param(":mode")
 	intID, _ := strconv.Atoi(id)
 
-	UserID := c.GetSession("uId")
-	UserName := c.GetSession("username")
-
-	if UserID != nil {
-		m := models.Notes{
-			Id: intID,
-		}
-		note := models.GetNotesByID(m.Id)
-		c.Data["Note"] = note
-		c.Data["UserID"] = UserID
-		c.Data["UserName"] = UserName
-		c.Layout = "layout.tpl"
-		c.LayoutSections = make(map[string]string)
-		c.LayoutSections["Nav"] = "navbar.tpl"
-		c.LayoutSections["Footer"] = "footer.tpl"
-
-		if mode == "edit" {
-			c.TplName = "edit_notepad.tpl"
-			c.Data["Title"] = "Edit note details"
-		} else {
-			c.TplName = "view_notepad.tpl"
-			c.Data["Title"] = "View note details"
-		}
-		c.Render()
+	if UserID == nil {
+		c.Redirect(beego.URLFor("UserController.Login"), 302)
 	}
+	m := models.Notes{
+		Id: intID,
+	}
+	note := models.GetNotesByID(m.Id)
+	c.Data["Note"] = note
+	c.Data["UserID"] = UserID
+	c.Data["UserName"] = UserName
+	c.Layout = "layout.tpl"
+	c.LayoutSections = make(map[string]string)
+	c.LayoutSections["Nav"] = "navbar.tpl"
+	c.LayoutSections["Footer"] = "footer.tpl"
+
+	if mode == "edit" {
+		c.TplName = "edit_notepad.tpl"
+		c.Data["Title"] = "Edit note details"
+	} else {
+		c.TplName = "view_notepad.tpl"
+		c.Data["Title"] = "View note details"
+	}
+	c.Render()
 }
 
 // UpdateNotes used to update a note
 func (c *NotePadController) UpdateNotes() {
+	UserID := c.GetSession("uId")
+	UserName := c.GetSession("username")
+
 	id := c.Ctx.Input.Param(":id")
 	noteID, _ := strconv.Atoi(id)
-	UserName := c.GetSession("username")
+
+	if UserID == nil {
+		c.Redirect(beego.URLFor("UserController.Login"), 302)
+	}
 
 	n := models.Notes{}
 	c.ParseForm(&n)
