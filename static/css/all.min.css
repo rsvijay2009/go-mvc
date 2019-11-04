@@ -12,7 +12,7 @@ body,h1,h2,h3,h4,h5,h6{font-family:"Open Sans",Helvetica,Arial,sans-serif}.page-
     margin-top: 5px;
 }
 .table-no-border {
-    border-width: 0;
+    border-width: 0 !important;
 }
 .panel-footer-h {
     height: 50px;

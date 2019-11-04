@@ -7,10 +7,10 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                                <img class="img-circle" src="/static/img/no-image.png" width="100" height="100" alt="User Pic">
+                            <div class="col-md-2">
+                                <img class="img-circle" src="/static/img/no-image.png" width="150" height="150" alt="User Pic">
                             </div>
-                            <div class=" col-md-12">
+                            <div class=" col-md-10">
                                 <table class="table">
                                     <tbody>
                                     <tr>
