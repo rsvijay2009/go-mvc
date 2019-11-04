@@ -22,6 +22,12 @@ Follow the steps to run the application
   git clone https://github.com/rsvijay2009/go-mvc.git
   ```
 
+- Run the below command to build the go binary for the docker container
+
+    ```
+    go build webapp
+    ```
+
 - Run the below commands to create and run the application inside a Docker container
 
   ```
