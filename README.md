@@ -2,7 +2,7 @@
 - This a small boilerplate GoLang web application with MVC architecture built with `beego` framework
 
 # About BEEG0
-- `Beego` is an open source framework to build and develop applications in the Go way
+- [Beego](https://beego.me/quickstart) is an open source framework to build and develop applications in the Go way
 - It is easy to use, intelligent, modular and provides high performance
 
 ## Requirements
@@ -22,7 +22,13 @@ Follow the steps to run the application
   git clone https://github.com/rsvijay2009/go-mvc.git
   ```
 
-- Edit the environment variables in `.env` file
+- Default configuration for MySQL
+
+```
+Username: root
+Password: root
+```
+This can be changed by modifying the `.env` file
 
 - Run the below commands to create and run the application inside a Docker container
 
@@ -33,35 +39,21 @@ Follow the steps to run the application
 
 - Your application will up and running in http://localhost:4040/
 
-# Useful docker commands
-
-# List all the containers
-
-```
-docker container ls -a
-```
-
-# Access database container
-
-```
-docker container exec -it {DB_CONTAINER_NAME} bash
-```
-
 # Screenshots
 
-# Login
+## Login
 ![Login](screenshots/login.png)
 
-# Register
+## Register
 ![Register](screenshots/register.png)
 
-# Profile
+## Profile
 ![Profile](screenshots/profile.png)
 
-# Notepad
+## Notepad
 ![Notepad](screenshots/notepad.png)
 
-# References
+## References
 
 [Beego quick start](https://beego.me/quickstart)
 

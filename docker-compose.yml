@@ -6,15 +6,17 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4040:4040"
-    container_name: ${APP_CONTAINER_NAME}
+    container_name: app_container
     restart: unless-stopped
+    depends_on:
+      - db
     networks:
       - backend
   db:
     image: mysql:5.7
     ports:
       - "3306:3306"
-    container_name: ${DB_CONTAINER_NAME}
+    container_name: db_container
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
