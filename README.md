@@ -12,7 +12,7 @@ If you are wanting to build and develop this, you will need the following items 
 - Go version 1.12+
 - Docker
 
-# Up and running
+# Installation steps
 
 Follow the steps to run the application
 
@@ -24,10 +24,10 @@ Follow the steps to run the application
 
 - Default configuration for MySQL
 
-```
-Username: root
-Password: root
-```
+    ```
+    Username: root
+    Password: root
+    ```
 This can be changed by modifying the `.env` file
 
 - Run the below commands to create and run the application inside a Docker container
