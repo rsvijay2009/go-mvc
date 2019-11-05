@@ -47,7 +47,7 @@ docker container ls -a
 docker container exec -it {DB_CONTAINER_NAME} bash
 ```
 
- Screenshots
+# Screenshots
 
 # Login
 ![Login](screenshots/login.png)
