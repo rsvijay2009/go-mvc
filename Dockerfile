@@ -19,8 +19,8 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o webapp .
+RUN go build -o go-mvc .
 
 EXPOSE 4040
 
-CMD ["./webapp"]
+CMD ["./go-mvc"]
