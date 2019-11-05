@@ -47,6 +47,20 @@ docker container ls -a
 docker container exec -it {DB_CONTAINER_NAME} bash
 ```
 
+ Screenshots
+
+# Login
+![Login](screenshots/login.png)
+
+# Register
+![Register](screenshots/register.png)
+
+# Profile
+![Profile](screenshots/profile.png)
+
+# Notepad
+![Notepad](screenshots/notepad.png)
+
 # References
 
 [Beego quick start](https://beego.me/quickstart)
